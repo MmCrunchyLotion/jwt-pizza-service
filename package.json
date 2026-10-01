@@ -5,16 +5,21 @@
   "main": "index.js",
   "scripts": {
     "start": "cd src && node index.js",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint ."
   },
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^6.0.0",
-    "express": "^4.19.2",
+    "express": "^4.22.3",
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.9.7"
   },
   "devDependencies": {
-    "jest": "^30.5.2"
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.11.0",
+    "globals": "^17.13.0",
+    "jest": "^30.5.2",
+    "supertest": "^7.3.0"
   }
 }
