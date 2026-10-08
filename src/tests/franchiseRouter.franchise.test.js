@@ -5,7 +5,7 @@ const {
   bearer,
   registerDiner,
   createAdmin,
-  createFranchise,
+  // createFranchise,
   createFranchisee,
 } = require("./helpers.js");
 
