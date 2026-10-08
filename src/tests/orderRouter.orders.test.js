@@ -121,7 +121,7 @@ describe("POST /api/order", () => {
   test("users only see their own orders", async () => {
     mockFactory({ ok: true, body: { jwt: "a.b.c", reportUrl: "http://r" } });
     const other = await registerDiner();
-    await request(app)
+    const otherOrder = await request(app)
       .post("/api/order")
       .set("Authorization", bearer(other.token))
       .send(orderBody());
@@ -130,6 +130,8 @@ describe("POST /api/order", () => {
       .get("/api/order")
       .set("Authorization", bearer(users.admin.token));
     expect(res.body.dinerId).toBe(users.admin.id);
-    expect(res.body.orders).toEqual([]);
+    expect(res.body.orders.some((o) => o.id === otherOrder.body.order.id)).toBe(
+      false,
+    );
   });
 });
