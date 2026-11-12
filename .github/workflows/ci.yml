@@ -55,6 +55,12 @@ jobs:
               url: 'https://pizza-factory.cs329.click',
               apiKey: '${{ secrets.FACTORY_API_KEY }}',
             },
+            metrics: {
+              source: 'jwt-pizza-service',
+              accountId: '${{ secrets.METRICS_ACCOUNT_ID }}',
+              endpointUrl: '${{ secrets.METRICS_ENDPOINT_URL }}',
+              apiKey: '${{ secrets.METRICS_API_KEY }}',
+            },
             logging: {
               source: 'jwt-pizza-service',
               accountId: '${{ secrets.LOGGING_ACCOUNT_ID }}',
